@@ -1,0 +1,63 @@
+:root{
+  --s-auto-primary: var(--themecolor);
+}
+
+.s-autoform-2 label{
+  padding: 4px 16px;
+  display: inline-block;
+}
+.s-autoform-2 input:not([type="checkbox"]):not([type="radio"]),
+.s-autoform-2 select,
+.s-autoform-2 textarea {
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  transition: 0.3s ease-out;
+  appearance: none;
+}
+
+.s-autoform-2 select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20viewBox='0%200%2024%2024'%3E%3Cpath%20fill='%23333'%20d='M7%2010l5%205%205-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 16px;
+  padding-right: 2.5rem;
+}
+
+.s-autoform-2 textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.s-autoform-2 input:focus,
+.s-autoform-2 select:focus,
+.s-autoform-2 textarea:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0px 2px var(--s-auto-primary);
+}
+
+.s-autoform-2 button {
+  background: var(--s-auto-primary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.s-autoform-2 button:hover {
+  filter: brightness(120%);
+}

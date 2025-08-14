@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Website name</title>
+
+	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/fa-all.css">
+	<link rel="stylesheet" type="text/css" href="css/coryG_base.css">
+	<link rel="stylesheet" type="text/css" href="css/coryG_UIOps.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script src="js/SuperScript.js"></script>
+	<script src="js/toappend.js"></script>
+	<script src="js/customalerter.js"></script>
+	<script src="js/coryG_UIOps.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<nav class="" data-scroller data-scrollend="60%" data-classdata="w3-animate-opacity,scrolled">
+		<div class="navcon">
+			<div class="logo">
+				<a href="#" class="logotxt">Inspyre</a>
+			</div>
+
+			<div class="navlinks" id="sitelinks" data-visibledata="0,0,1">
+				<a href="#">About</a>
+				<a href="#services">Services</a>
+				<a href="#whyus">Why us</a>
+				<a href="#contact">Contact</a>
+				<a href="playground/index.html" class="active"><i class="fa fa-gamepad"></i> playground</a>
+			</div>
+
+			<div class="w3-hide">
+				<a href="#contact" class="btn cta-btn">
+					<i class="fa fa-phone"></i>
+					Reach out
+				</a>
+			</div>
+
+			<div class="hamburger smallmenu w3-hide-large" id="hamburger">
+				<a><i class="fa fa-bars"></i></a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="banner w3-top flowline gap-sm" id="curbanner" data-scroller data-scrollend="50%" data-classdata="w3-animate-opacity,hidetop">
+		<div class="thetext">
+			🎉 New: Introducing our AI-powered data anylytics package.
+		</div>
+		<a href="#pricing">Learn more →</a>
+	</div>
+	
+	<!-- <div class="themetag w3-block w3-center">Hero section</div> -->
+
+	<section class="hero">
+		<h2 class="hedtxt2">Where Startups Launch & Developers Thrive</h2>
+		<p>Your one-stop platform for hosting startup apps and developer tools that accelerate your journey from idea to success.</p>
+		<a class="btn primary" href="#services">Get Started</a>
+	</section>
+
+	<section class="section" id="services">
+		<div class="w3-center spacy-md">
+			<h2 class="hedtxt3">Our Core Services</h2>
+		</div>
+		<div class="cards">
+			<div class="card">
+				<h4>App Hosting</h4>
+				<p>Secure, scalable, and optimized hosting for your startup apps.</p>
+			</div>
+			<div class="card">
+				<h4>Developer Toolkits</h4>
+				<p>Prebuilt code resources to supercharge your development process.</p>
+			</div>
+			<div class="card">
+				<h4>Productivity Applets</h4>
+				<p>Access to a library of tools to make your work easier and more efficient</p>
+			</div>
+		</div>
+		<div class="spacy-md w3-center w3-hide">
+			<button class="btn outline">View All</button>
+		</div>
+	</section>
+
+	<section class="brands w3-hide">
+		<img src="img/demos/demoimg1.jpg" alt="Brand">
+		<img src="img/demos/demoimg1.jpg" alt="Brand">
+		<img src="img/demos/demoimg1.jpg" alt="Brand">
+		<img src="img/demos/demoimg1.jpg" alt="Brand">
+		<img src="img/demos/demoimg1.jpg" alt="Brand">
+	</section>
+
+	<section class="section" id="whyus">
+		<div class="w3-center spacy-md">
+			<h2 class="hedtxt3">Why choose us</h2>
+		</div>
+
+		<div class="cards">
+			<div class="card">
+				<h4>Fast Deployment</h4>
+				<p>Get your app live in minutes, not days.</p>
+			</div>
+			<div class="card">
+				<h4>Built for Scale</h4>
+				<p>Handle growth effortlessly with our scalable infrastructure.</p>
+			</div>
+			<div class="card">
+				<h4>Community Support</h4>
+				<p>Join a vibrant network of innovators.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="w3-center spacy-md">
+			<h2 class="hedtxt3">FAQs</h2>
+		</div>
+		<div class="faq">
+			<details>
+				<summary>What kind of apps can I host?</summary>
+				<p class="w3-animate-opacity">Any web-based or mobile-friendly MVP. preferably php (LAMP or laravel) and nodejs apps. Support for python and ASP apps is yet to be implemented</p>
+			</details>
+		</div>
+		<div class="faq">
+			<details>
+				<summary>Do you offer free trials?</summary>
+				<p class="w3-animate-opacity">Yes, we have a 14-day free trial for all plans.</p>
+			</details>
+		</div>
+		<div class="faq">
+			<details>
+				<summary>Is my data secure?</summary>
+				<p class="w3-animate-opacity">We use enterprise-grade encryption and security protocols to safeguard hosted apps. But security for your application's users will still depend on the hosted application's security measures</p>
+			</details>
+		</div>
+	</section>
+
+	<section class="section container" id="contact">
+		<div class="w3-center">
+			<span class="hedtxt2">Leave a <b>message</b></span>
+			<p>Whether it’s an <b>Inquiry</b> or <b>feedback</b>, we’d love to hear from you. Fill out the form and we’ll respond in due time.</p>
+		</div>
+		<div class="grid-50-50">
+			<div class="flow left">
+				<form action="feedback_system/addfeedback.php" method="POST" class="flow left contact-form gap-md">
+					<input type="text" name="alias" placeholder="Your Name" required>
+					<input type="email" name="theemail" placeholder="Your Email" required>
+					<textarea name="themsg" placeholder="Your Message" rows="5" required></textarea>
+					<button class="btn primary" type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
+				</form>
+			</div>
+			<img loading="lazy" src="img/demos/demoimg1.jpg" alt="Contact Us">
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-grid container">
+			<div>
+				<h4>Inspyre Ltd.</h4>
+				<p>
+					Imara daima<br>
+					Nairobi, Kenya
+				</p>
+			</div>
+			<div>
+				<h4>Menu</h4>
+				<div>
+					<li><a href="#services">services</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#contact">contacts</a></li>
+				</div>
+			</div>
+			<div class="w3-hide">
+				<h4>Resources</h4>
+				<div>
+					<li><a href="#">Case Studies</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Support Docs</a></li>
+				</div>
+			</div>
+			<div>
+				<h4>Legal</h4>
+				<div>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Service</a></li>
+				</div>
+			</div>
+		</div>
+		<p class="text-center" style="margin-top:2rem;font-size:.875rem;color:var(--clr-text-muted)">
+			© <span id="year"></span> Haosel ltd. All rights reserved.
+		</p>
+	</footer>
+</body>
+</html>

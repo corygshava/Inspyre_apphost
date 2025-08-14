@@ -1,0 +1,110 @@
+:root{
+	--s-primary: var(--themecolor);
+	--s-panelbg: var(--clr-panelbg);
+}
+
+.s-autoform-i{padding: 20px 15px;box-shadow: 3px 3px 10px #dedddd;}
+.s-autoform-i input,.s-autoform-i textarea {border-radius: 5px;border:2px solid #c2bbbb;padding: 5px;width: 100%;background: transparent;margin: 15px 0px;}
+.s-autoform-i button{display: inline-block;border:none;width: 49%;padding: 10px;background: #505050;color: #fefefe;}.s-autoform-i button[type="submit"]:hover{background: #f0cc0a;}.s-autoform-i button[type="reset"]:hover{background: firebrick;}
+.s-autoform-i h2,.s-autoform-i h3,.s-autoform-i h4{display: block;font-weight: bold;text-align: center;color: gold;}
+
+.s-autoform-ii{padding: 20px 15px;box-shadow: 3px 3px 10px #dedddd;}
+.s-autoform-ii input,.s-autoform-ii textarea {border-radius: 0px;border:none;border-bottom:2px solid #13725a;padding: 5px;width: 100%;background: transparent;margin: 15px 0px;}
+.s-autoform-ii button{display: inline-block;border:none;width: 49%;padding: 10px;}.s-autoform-ii button[type="submit"]:hover{background: #f88a2d;}.s-autoform-ii button[type="reset"]:hover{background: #ed1010;}
+.s-autoform-ii h2,.s-autoform-ii h3,.s-autoform-ii h4{display: block;font-weight: bold;text-align: center;color: #f88a2d;}
+
+.s-autoform-iii{padding: 20px 15px;background: transparent;}
+.s-autoform-iii input,.s-autoform-iii textarea {border-radius: 15px;border:none;padding: 16px;width: 80%;background: rgba(255,255,255,0.5);margin: 15px 0px;}
+.s-autoform-iii button{display: inline-block;border:none;width: 80%;padding: 16px;border-radius: 15px;margin: 15px 0px;background: #144168;color: #fefffe;}.s-autoform-iii button[type="submit"]:hover{background: #41c3f6;}.s-autoform-iii button[type="reset"]:hover{background: #ed1010;}
+.s-autoform-iii h2,.s-autoform-iii h3,.s-autoform-iii h4{display: block;font-weight: bold;text-align: center;color: #f88a2d;}
+
+.s-autoform-iv{padding: 20px 15px;background: transparent;box-shadow: 3px 3px 20px rgba(0,0,0,0.3);}
+.s-autoform-iv input,.s-autoform-iv textarea {border-radius: 15px;border:none;padding: 16px;width: 80%;background: rgba(255,255,255,0.5);margin: 15px 0px;}
+.s-autoform-iv button{display: inline-block;border:none;width: 80%;padding: 16px;border-radius: 15px;margin: 15px 0px;background: #144168;color: #fefffe;}.s-autoform-iv button[type="submit"]:hover{background: #41c3f6;}.s-autoform-iv button[type="reset"]:hover{background: #ed1010;}
+.s-autoform-iv h2,.s-autoform-iv h3,.s-autoform-iv h4{display: block;font-weight: bold;text-align: center;color: #f88a2d;}
+
+/* autoform 5 */
+	.s-autoform-v {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		max-width: 500px;
+		margin: auto;
+		font-family: 'Segoe UI', sans-serif;
+	}
+
+	.s-autoform-v input,.s-autoform-v textarea,.s-autoform-v select {
+		background: var(--s-panelbg);
+		border: 1px solid #777;
+		color: #ffffff;
+		padding: 12px 15px;
+		font-size: 1em;
+		border-radius: 8px;
+		outline: none;
+		width: 100%;
+		transition: all 0.3s ease;
+	}
+
+	/* Hover / Focus glow effect */
+	.s-autoform-v input:focus,
+	.s-autoform-v textarea:focus,
+	.s-autoform-v select:focus {
+		border-color: #00ffc6;
+		box-shadow: 0 0 12px var(--s-primary);
+	}
+
+	/* Textarea specific */
+	.s-autoform-v textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	/* Buttons */
+	.s-autoform-v button,
+	.s-autoform-v input[type="submit"] {
+		/*background: linear-gradient(90deg, #00ffc6, #00a1a7);*/
+		border: none;
+		background: var(--s-primary);
+		padding: 12px 20px;
+		font-size: 1em;
+		font-weight: bold;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	/* Button hover */
+	.s-autoform-v button:hover,
+	.s-autoform-v input[type="submit"]:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(0, 255, 198, 0.4);
+	}
+
+	/* Select dropdown */
+	.s-autoform-v select {
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' height='12' viewBox='0 0 20 20' width='12' xmlns='http://www.w3.org/2000/svg'%3E<path d='M5.516 7.548L10 12.032l4.484-4.484L16 9.064 10 15.064 4 9.064z'/></svg>");
+		background-repeat: no-repeat;
+		background-position: right 15px center;
+		background-size: 12px;
+	}
+
+	/* Placeholder text */
+	.s-autoform-v input::placeholder,
+	.s-autoform-v textarea::placeholder {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+@media only screen and (max-width: 760px){
+	.s-autoform-i,.s-autoform-ii,.s-autoform-ii,.s-autotable-i{width:95%;margin: 20px 2.5%;}
+	.s-automodal-ii{width: 95%;margin:25px 2.5%;}
+}
+@media only screen and (min-width: 760px){
+	.s-autoform-i,.s-autoform-ii,.s-autoform-ii,.s-autotable-i{width:80%;margin: 20px 10%;}
+	.s-automodal-ii{width: 70%;margin:5% 15%;}
+}
+@media only screen and (min-width: 950px){
+	.s-autoform-i,.s-autoform-ii.s-autoform-ii,{width:60%;margin: 20px 15%;}
+	.s-automodal-ii{width:60%;margin:4% 20%;}
+	.s-automodal-i,.s-autotable-i{width:50%;margin: 25px 25%;}
+}

@@ -1,0 +1,104 @@
+:root{
+    --themecolor: rgb(0.255,19.125,204);
+    --textcolor:#fff;
+    --bodybg: #161619;
+    --conbg: #333;
+    --roundness: 32px;
+}
+body{
+    background-color: var(--bodybg);
+    color: var(--textcolor);
+}
+.mymodal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bodybg);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.mymodal .modal-content{
+    padding: 24px 32px;
+    background-color: var(--bodybg);
+    box-shadow:0 0 12px var(--conbg);
+    border-radius: var(--roundness);
+    max-width: 700px;
+}
+
+body.t2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+header{
+    padding: 24px 32px;
+    width: 100%;
+    border-radius: 0 0 var(--roundness) var(--roundness);
+    background-color: var(--conbg) !important;
+}
+footer{
+    padding: 0 24px 24px 24px;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.datapart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 100px 0;
+}
+.datapart .cardbox{
+    width: 96%;
+    max-width: 600px;
+}
+.cardbox .card{
+    padding: 16px 24px;
+    margin: 24px 0;
+    border-radius: var(--roundness);
+    box-shadow: 0 0 12px rgba(145, 145, 145, 0.2);
+}
+.cardbox .card .card-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.footerstuff{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+    margin: 0 0 20px 0;
+}
+
+/* reusables */
+.bolden{
+    font-weight: 800;
+}
+.subtxt{
+    color: #aaa;
+}
+.themebtn{
+    display: inline-block;
+    padding: 16px;
+    border-radius: var(--roundness);
+    background-color: var(--themecolor) !important;
+    color: #fff !important;
+}
+.themetxt{
+    color: var(--themecolor);
+}

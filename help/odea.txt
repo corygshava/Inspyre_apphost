@@ -1,0 +1,8 @@
+the idea is to create a singular place for viewing all my side projects and tools all in one place. 
+features
+    all the tools will be in a simple easy to access area 
+    they will be divided into tools, apps and miniapps (too big to be a tool, too specific to be an app)
+    there will also be a place for toolkits (basically code to make work easier)
+    any user can bookmark the tools they like for easy access later
+    it will use a js file to hold the data then later will rely on API calls to a json file for the same
+    

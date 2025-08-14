@@ -1,0 +1,358 @@
+<!-- made with GPT 5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StartupHub - Apps & Tools for Innovators</title>
+	<style>
+		:root {
+			--bg-color: #0a0f14;
+			--primary: #00ffc6;
+			--secondary: #00a1a7;
+			--text-light: #ffffff;
+			--text-muted: #99aab5;
+			--card-bg: #101820;
+		}
+		* {
+			box-sizing: border-box;
+			transition: 0.3s ease-out;
+		}
+		body {
+			margin: 0;
+			font-family: 'Segoe UI', sans-serif;
+			background: var(--bg-color);
+			color: var(--text-light);
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 8%;
+			background: transparent;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+		header h1 {
+			color: var(--primary);
+			font-size: 1.8em;
+		}
+		nav a {
+			color: var(--text-light);
+			margin: 0 15px;
+			text-decoration: none;
+		}
+		nav a:hover {
+			color: var(--primary);
+		}
+		.hero {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 80px 0 0 0;
+			text-align: center;
+			background: linear-gradient(180deg, rgba(0,255,198,0.2), transparent);
+			min-height: 70vh;
+		}
+		.hero h2 {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+		}
+		.hero p {
+			color: var(--text-muted);
+			font-size: 1.1em;
+			max-width: 700px;
+		}
+		.hero button {
+			background: var(--primary);
+			border: none;
+			color: var(--bg-color);
+			padding: 12px 24px;
+			margin-top: 20px;
+			font-size: 1em;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		.section {
+			padding: 60px 8%;
+		}
+		.section h3 {
+			font-size: 1.8em;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}
+		.card {
+			background: var(--card-bg);
+			padding: 20px;
+			border-radius: 10px;
+		}
+		.card h4 {
+			color: var(--primary);
+		}
+		button.view-all {
+			display: block;
+			margin: 20px auto 0;
+			background: transparent;
+			border: 2px solid var(--primary);
+			color: var(--primary);
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		.testimonials {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+		.testimonial {
+			background: var(--card-bg);
+			padding: 20px;
+			border-radius: 10px;
+		}
+		.brands {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 30px 0;
+			background: rgba(255,255,255,0.02);
+		}
+		.advantages {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+		}
+		.faq {
+			background: var(--card-bg);
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 8px;
+		}
+		.faq summary {
+			cursor: pointer;
+			color: var(--primary);
+		}
+		.pricing {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}
+		.price-card {
+			background: var(--card-bg);
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			max-width: 500px;
+			margin: auto;
+		}
+		.contact-form input, .contact-form textarea {
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+		}
+		footer {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+			padding: 40px 8%;
+			background: #05080b;
+		}
+	</style>
+	<style>
+		/*add to autoforms later*/
+
+		.autoform {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			max-width: 500px;
+			margin: auto;
+			font-family: 'Segoe UI', sans-serif;
+		}
+
+		/* All form controls */
+		.autoform input,
+		.autoform textarea,
+		.autoform select {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(0, 255, 198, 0.4);
+			color: #ffffff;
+			padding: 12px 15px;
+			font-size: 1em;
+			border-radius: 8px;
+			outline: none;
+			width: 100%;
+			transition: all 0.3s ease;
+		}
+
+		/* Hover / Focus glow effect */
+		.autoform input:focus,
+		.autoform textarea:focus,
+		.autoform select:focus {
+			border-color: #00ffc6;
+			box-shadow: 0 0 12px rgba(0, 255, 198, 0.6);
+		}
+
+		/* Textarea specific */
+		.autoform textarea {
+			resize: vertical;
+			min-height: 100px;
+		}
+
+		/* Buttons */
+		.autoform button,
+		.autoform input[type="submit"] {
+			background: linear-gradient(90deg, #00ffc6, #00a1a7);
+			border: none;
+			color: #0a0f14;
+			padding: 12px 20px;
+			font-size: 1em;
+			font-weight: bold;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		/* Button hover */
+		.autoform button:hover,
+		.autoform input[type="submit"]:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 15px rgba(0, 255, 198, 0.4);
+		}
+
+		/* Select dropdown */
+		.autoform select {
+			appearance: none;
+			background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' height='12' viewBox='0 0 20 20' width='12' xmlns='http://www.w3.org/2000/svg'%3E<path d='M5.516 7.548L10 12.032l4.484-4.484L16 9.064 10 15.064 4 9.064z'/></svg>");
+			background-repeat: no-repeat;
+			background-position: right 15px center;
+			background-size: 12px;
+		}
+
+		/* Placeholder text */
+		.autoform input::placeholder,
+		.autoform textarea::placeholder {
+			color: rgba(255, 255, 255, 0.6);
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>StartupHub</h1>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">Services</a>
+			<a href="#">Pricing</a>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<h2>Where Startups Launch & Developers Thrive</h2>
+		<p>Your one-stop platform for hosting startup apps and developer tools that accelerate your journey from idea to success.</p>
+		<button>Get Started</button>
+	</section>
+
+	<section class="section">
+		<h3>Our Core Services</h3>
+		<div class="cards">
+			<div class="card"><h4>App Hosting</h4><p>Secure, scalable, and optimized hosting for your startup apps.</p></div>
+			<div class="card"><h4>Developer Toolkits</h4><p>Prebuilt code resources to supercharge your development process.</p></div>
+			<div class="card"><h4>Collaboration Hub</h4><p>Connect with like-minded innovators and build together.</p></div>
+		</div>
+		<button class="view-all">View All</button>
+	</section>
+
+	<section class="section">
+		<h3>Testimonials</h3>
+		<div class="testimonials">
+			<div class="testimonial"><p>"StartupHub helped us launch in record time. The hosting is rock-solid!" – Jane, CEO of BrightTech</p></div>
+			<div class="testimonial"><p>"The developer toolkits saved us weeks of work. Incredible platform." – Omar, Lead Dev at CodeWave</p></div>
+			<div class="testimonial"><p>"I’ve tried many platforms, but none offer the blend of tools and community like StartupHub." – Lina, Founder of AppNest</p></div>
+		</div>
+	</section>
+
+	<section class="brands">
+		<img src="https://picsum.photos/100/50" alt="Brand">
+		<img src="https://picsum.photos/100/50" alt="Brand">
+		<img src="https://picsum.photos/100/50" alt="Brand">
+		<img src="https://picsum.photos/100/50" alt="Brand">
+		<img src="https://picsum.photos/100/50" alt="Brand">
+	</section>
+
+	<section class="section">
+		<h3>Why Choose Us</h3>
+		<div class="advantages">
+			<div class="card"><h4>Fast Deployment</h4><p>Get your app live in minutes, not days.</p></div>
+			<div class="card"><h4>Built for Scale</h4><p>Handle growth effortlessly with our scalable infrastructure.</p></div>
+			<div class="card"><h4>Community Support</h4><p>Join a vibrant network of innovators.</p></div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h3>FAQs</h3>
+		<div class="faq"><details><summary>What kind of apps can I host?</summary><p>Any web-based or mobile-friendly startup application.</p></details></div>
+		<div class="faq"><details><summary>Do you offer free trials?</summary><p>Yes, we have a 14-day free trial for all plans.</p></details></div>
+		<div class="faq"><details><summary>Is my data secure?</summary><p>We use enterprise-grade encryption and security protocols.</p></details></div>
+	</section>
+
+	<section class="section">
+		<h3>Pricing</h3>
+		<div class="pricing">
+			<div class="price-card"><h4>Individual</h4><p>$10/mo</p><p>For solo devs and small projects.</p></div>
+			<div class="price-card"><h4>Corporate</h4><p>$50/mo</p><p>For small teams and growing startups.</p></div>
+			<div class="price-card"><h4>Enterprise</h4><p>Contact Us</p><p>For large organizations and custom solutions.</p></div>
+		</div>
+	</section>
+
+	<section class="section">
+		<h3>Contact Us</h3>
+		<form class="autoform">
+			<input type="text" placeholder="Your Name">
+			<input type="email" placeholder="Your Email">
+			<select>
+				<option>Select a service</option>
+				<option>App Hosting</option>
+				<option>Developer Toolkits</option>
+				<option>Collaboration Hub</option>
+			</select>
+			<textarea placeholder="Your Message"></textarea>
+			<button type="submit">Send Message</button>
+		</form>
+
+	</section>
+
+	<footer>
+		<div>
+			<h4>StartupHub</h4>
+			<p>Hosting apps and tools for the next generation of startups.</p>
+		</div>
+		<div>
+			<h4>Site Menu</h4>
+			<p>Home</p>
+			<p>Services</p>
+			<p>Pricing</p>
+			<p>Contact</p>
+		</div>
+		<div>
+			<h4>Features</h4>
+			<p>Secure Hosting</p>
+			<p>Developer Toolkits</p>
+			<p>Community Hub</p>
+		</div>
+	</footer>
+</body>
+</html>

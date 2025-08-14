@@ -1,0 +1,3 @@
+# add the user generated datalists to prevent corrupting the uploaded area
+playground/res/itemslist.json
+feedback_system/feedbackdata.json

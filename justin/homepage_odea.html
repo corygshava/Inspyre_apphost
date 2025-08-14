@@ -1,0 +1,161 @@
+<!-- made with GPT 5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Startup App Hub</title>
+
+	<style>
+		:root {
+			--bg-dark: #0a0f12;
+			--bg-card: #121a1f;
+			--primary: #00ffc6;
+			--secondary: #00a4ff;
+			--text-light: #e0fdfc;
+		}
+
+		* {
+			box-sizing: border-box;
+			transition: 0.3s ease-out;
+		}
+		body {
+			margin: 0;
+			background: var(--bg-dark);
+			color: var(--text-light);
+			font-family: 'Segoe UI', Tahoma, sans-serif;
+		}
+
+		header {
+			padding: 1rem 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		.logo {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: var(--primary);
+		}
+
+		nav a {
+			margin-left: 1.5rem;
+			text-decoration: none;
+			color: var(--text-light);
+			font-weight: 500;
+		}
+
+		nav a:hover {
+			color: var(--primary);
+		}
+
+		.hero {
+			text-align: center;
+			padding: 4rem 2rem;
+		}
+
+		.hero h1 {
+			font-size: 3rem;
+			color: var(--primary);
+		}
+
+		.hero p {
+			font-size: 1.2rem;
+			max-width: 600px;
+			margin: 1rem auto;
+			color: rgba(255, 255, 255, 0.8);
+		}
+
+		.cta-btn {
+			background: linear-gradient(45deg, var(--primary), var(--secondary));
+			border: none;
+			padding: 1rem 2rem;
+			font-size: 1rem;
+			border-radius: 50px;
+			cursor: pointer;
+			margin-top: 1.5rem;
+			color: var(--bg-dark);
+			font-weight: bold;
+		}
+
+		.cta-btn:hover {
+			filter: brightness(1.1);
+		}
+
+		.apps-section {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 2rem;
+			padding: 3rem 2rem;
+		}
+
+		.app-card {
+			background: var(--bg-card);
+			padding: 2rem;
+			border-radius: 1rem;
+			text-align: center;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.app-card img {
+			width: 100%;
+			border-radius: 0.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.app-card h3 {
+			color: var(--primary);
+		}
+
+		footer {
+			text-align: center;
+			padding: 2rem;
+			font-size: 0.9rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.05);
+			color: rgba(255, 255, 255, 0.6);
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">AppSphere</div>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">Apps</a>
+			<a href="#">Pricing</a>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<h1>Launch Your Startup Apps in Style</h1>
+		<p>Host, showcase, and grow your applications in a sleek, futuristic platform built for visionaries and innovators.</p>
+		<button class="cta-btn">Get Started</button>
+	</section>
+
+	<section class="apps-section">
+		<div class="app-card">
+			<img src="https://picsum.photos/300/200?random=1" alt="App 1">
+			<h3>FinTrack</h3>
+			<p>Next-gen finance tracking for modern businesses.</p>
+		</div>
+		<div class="app-card">
+			<img src="https://picsum.photos/300/200?random=2" alt="App 2">
+			<h3>CloudCore</h3>
+			<p>Ultra-fast and secure cloud hosting for startups.</p>
+		</div>
+		<div class="app-card">
+			<img src="https://picsum.photos/300/200?random=3" alt="App 3">
+			<h3>MarketAI</h3>
+			<p>AI-powered analytics for smarter decision-making.</p>
+		</div>
+	</section>
+
+	<footer>
+		© 2025 AppSphere. All rights reserved.
+	</footer>
+</body>
+</html>

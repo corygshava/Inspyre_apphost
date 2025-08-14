@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Website name</title>
+
+	<!-- <base href=""> -->
+
+	<link rel="stylesheet" type="text/css" href="../css/w3.css">
+	<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../css/fa-all.css">
+	<link rel="stylesheet" type="text/css" href="../css/coryG_base.css">
+	<link rel="stylesheet" type="text/css" href="../css/coryG_UIOps.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+	<script src="../js/SuperScript.js"></script>
+	<script src="../js/toappend.js"></script>
+	<script src="../js/customalerter.js"></script>
+	<script src="../js/super_encryptor.js"></script>
+	<script src="../js/coryG_UIOps.js"></script>
+	<script src="../js/app.js"></script>
+
+	<style>
+		nav{backdrop-filter: none !important;}
+		header{padding: 128px 0 64px 0}
+		footer{padding: 24px 2rem  12px 2rem !important;}
+		.section{padding: var(--size-md) 0 !important;}
+		.card{display: flex;flex-direction: column;justify-content: space-around;}
+	</style>
+</head>
+
+<body>
+	<nav class="" data-scroller data-scrollend="30%" data-classdata="w3-animate-opacity,scrolled">
+		<div class="navcon">
+			<div class="logo">
+				<a href="#" class="logotxt">Inspyre</a>
+			</div>
+
+			<div class="navlinks" id="sitelinks" data-visibledata="1,1,1">
+				<a href="additem.html"><i class="fa fa-plus"></i></a>
+				<a href="../index.html" class="active"><i class="fa fa-home"></i></a>
+			</div>
+		</div>
+	</nav>
+
+	<header class="w3-center hero small">
+		<h1 class="hedtxt2">Code Playground</h1>
+		<p>here are some of the apps hosted on this platform</p>
+	</header>
+
+	<div class="section">
+		<div class="w3-center">
+			<h3 class="hedtxt3">Tools</h3>
+		</div>
+		<div class="cards" data-mytype="tools">
+			<div class="w3-center spacy-lg">
+				--
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="w3-center">
+			<h3 class="hedtxt3">Applets</h3>
+		</div>
+		<div class="cards" data-mytype="applets">
+			<div class="w3-center spacy-lg">
+				--
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="w3-center">
+			<h3 class="hedtxt3">Apps</h3>
+		</div>
+		<div class="cards" data-mytype="apps">
+			<div class="w3-center spacy-lg">
+				--
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<p class="text-center" style="font-size:.875rem;color:var(--clr-text-muted)">
+			© <span id="year"></span> Inspyre ltd. All rights reserved.
+		</p>
+	</footer>
+
+	<script>
+		let itemslist = [];
+		let filterlist = [];
+
+		// uis
+		let displays = undefined;
+		let tools_ui = undefined;
+		let apps_ui = undefined;
+		let applets_ui = undefined;
+
+		async function getitems() {
+			let outres = "";
+			try{
+				let thedata = await fetch('res/itemslist.json')
+				.then(res => {
+					console.log(res);
+
+					if(res.status != 200){
+						if(res.status == 404){
+							throw new Error(`-- [${res.status}] file not found`);
+						} else {
+							throw new Error(`-- [${res.status}] ${res.statusText}`);
+						}
+					}
+					return res.text();
+				})
+
+				outres = await thedata;
+			} catch(err){
+				outres = err;
+			}
+
+			return outres;
+		}
+
+		async function getthestuff(){
+			let result = await getitems();
+
+			if((`${result}`).includes("--")){
+				alert_danger(result);
+			} else {
+				itemslist = JSON.parse(result);
+
+				itemslist = itemslist.map((el,id) => {return {...el,"id":id}})
+			}
+
+			console.log("im done getting stuff")
+			renderstuff();
+		}
+
+		async function deleteitem(i){
+			let entred = prompt("enter auth code");
+			let thekey = gdc('jvyFjDapGFnzoajDapGFCa');
+
+			try{
+				let thedata = await fetch('res/deleteitem.php',{
+					'headers': {
+						'Content-Type' : "application/json"
+					},
+					'method':"POST",
+					'body' : JSON.stringify({'id':i,"apikey":entred})
+				})
+				.then(res => {
+					console.log(res);
+
+					if(res.status != 200){
+						if(res.status == 404){
+							throw new Error(`-- [${res.status}] file not found`);
+						} else {
+							throw new Error(`-- [${res.status}] ${res.statusText}`);
+						}
+					}
+					return res.text();
+				})
+
+				outres = await thedata;
+			} catch(err){
+				outres = err;
+			}
+
+			return outres;
+		}
+
+		async function removeme(n){
+			if(n == undefined){
+				alert_danger("invalid operation")
+				return;
+			}
+
+			let thaname = itemslist[n].name;
+			let con = confirm(`are you sure you want to remove ${thaname}`)
+
+			if(con){
+				let delres = await deleteitem(n);
+				let returnobj = delres.includes("-- [") ? {"success":false,"message":delres} : JSON.parse(delres);
+				let msg = returnobj.message;
+
+				if(!returnobj.success){
+					alert_warning(msg);
+				} else {
+					alert_success(msg);
+
+					getthestuff()
+				}
+			}
+		}
+
+		// end of asyncs
+
+		function setupuis() {
+			displays = document.body;
+			tools_ui = displays.querySelector('[data-mytype="tools"]');
+			apps_ui = displays.querySelector('[data-mytype="apps"]');
+			applets_ui = displays.querySelector('[data-mytype="applets"]');
+		}
+
+		function renderstuff(ovr) {
+			ovr = ovr == undefined ? itemslist : ovr;
+
+			console.log("started rendering");
+
+			let tools = [...ovr].filter(el => {return el.type.toLowerCase() == ("tool")});
+			let apps = [...ovr].filter(el => {return el.type.toLowerCase() == ("app")});
+			let applets = [...ovr].filter(el => {return el.type.toLowerCase() == ("applet")});
+
+			let tools_out = tools.length > 0 ? "" : emptyhtml;
+			let apps_out = apps.length > 0 ? "" : emptyhtml;
+			let applets_out = applets.length > 0 ? "" : emptyhtml;
+
+			tools.forEach((el,n) => {tools_out += makecard(el);})
+			apps.forEach((el,n) => {apps_out += makecard(el);})
+			applets.forEach((el,n) => {applets_out += makecard(el);})
+
+			tools_ui.innerHTML = tools_out;
+			apps_ui.innerHTML = apps_out;
+			applets_ui.innerHTML = applets_out;
+
+			console.log("finished rendering");
+		}
+
+		function makecard(who) {
+			// {"name":"Morris Kiringa","type":"applet","tags":["silhouette","mountain peak","sunset","triumph","vibrant sky landscape"],"description":"wadawf","link":"https://docs.google.com/presentation/d/1E2Gj5si7sw28c9YPAXSdVfC0yyAWC-Fe/edit?usp=drive_link&ouid=106124178104104687109&rtpof=true&sd=true","added":"2025-08-14T00:26:16+02:00"}
+			let res = `
+			<div class="card" data-tags="${who.tags.join()}">
+				<button class="btn w3-display-topright w3-transparent w3-text-white" onclick="removeme(${who.id})"><i class="fa fa-times"></i></button>
+				<h4>${who.name}</h4>
+				<p>${who.description}</p>
+				<div class="btn-group">
+					<a href="${who.link}" target="_blank" class="btn outline">go</a>
+				</div>
+			</div>`;
+
+			return res;
+		}
+
+		window.addEventListener('load', () => {
+			setupuis();
+			getthestuff();
+		});
+	</script>
+</body>
