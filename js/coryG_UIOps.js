@@ -176,7 +176,19 @@ let latest_ScrollEvent = undefined;
 			el.dataset.mytop = mytop;
 			el.dataset.scrollstart = startat;
 			el.dataset.scrollend = endat;
-		})
+		});
+
+
+		// scrollers
+		let copyguys = document.querySelectorAll('[data-copyme]');
+		copyguys.forEach(el => {
+			el.dataset['picker'] = 'copyguy';
+
+			let tk = document.querySelector(el.dataset.copyme);
+			let dt = tk.innerHTML;
+
+			el.innerHTML = dt;
+		});
 	}
 
 	// handles scroller functionality
