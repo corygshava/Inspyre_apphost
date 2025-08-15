@@ -230,9 +230,11 @@
 
 		function makecard(who) {
 			// {"name":"Morris Kiringa","type":"applet","tags":["silhouette","mountain peak","sunset","triumph","vibrant sky landscape"],"description":"wadawf","link":"https://docs.google.com/presentation/d/1E2Gj5si7sw28c9YPAXSdVfC0yyAWC-Fe/edit?usp=drive_link&ouid=106124178104104687109&rtpof=true&sd=true","added":"2025-08-14T00:26:16+02:00"}
+
+			// made it that not just anyone can remove the apps hosted
 			let res = `
 			<div class="card" data-tags="${who.tags.join()}">
-				<button class="btn w3-display-topright w3-transparent w3-text-white" onclick="removeme(${who.id})"><i class="fa fa-times"></i></button>
+				<button class="btn w3-display-topright w3-transparent w3-text-white w3-hide" onclick="removeme(${who.id})"><i class="fa fa-times"></i></button>
 				<h4>${who.name}</h4>
 				<p>${who.description}</p>
 				<div class="btn-group">
