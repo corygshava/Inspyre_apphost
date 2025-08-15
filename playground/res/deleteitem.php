@@ -16,7 +16,7 @@
     $storedKey = file_get_contents(__DIR__ . '/ddxrv_sitekey.txt');
 
     if ($providedKey != $storedKey) {
-        respond(false, "Unauthorized: Invalid API key. [$providedKey vs $storedKey]");
+        respond(false, "Unauthorized: Invalid API key.");
     }
 
     // Validate ID
