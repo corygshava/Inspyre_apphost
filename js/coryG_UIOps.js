@@ -208,9 +208,11 @@ let latest_ScrollEvent = undefined;
 				let mlk = "sdlink_" + id;
 				sdnav.dataset.mlk = mlk;
 
+				let sel = sdnav.dataset.myparent == undefined ? `[data-mlk=${mlk}]` : sdnav.dataset.myparent;
+
 				lnks.forEach((el,id) => {
 					el.addEventListener('click',() => {
-						toggleShowB(`[data-mlk=${mlk}]`,'flex','none');
+						toggleShowB(sel,'flex','none');
 					})
 				})
 			});
