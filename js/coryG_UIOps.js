@@ -13,11 +13,16 @@
 		DONT, and i repeat DONT CHANGE ANYTHING unless you know what youre doing and you've been given recorded permission to do so.
 		this code relies heavily on coryG_UIOps.css and w3.css to display certain items correctly
 		if you want to modify how the items look you should do so via the css file and only modify here if no other way is convenient
+		note that this file is mostly for runtime behaviour rather than how something looks
 		also its alot easier to change via css than over here so no need to go through the trouble
 */
 
 // selectors
 let partselector = '.part';		// the selector that defines a section of a page
+
+// code data
+let afterfx_delay = 700;
+let pageloaded = false;
 
 // UI components
 let scrollers = [];
@@ -179,7 +184,7 @@ let latest_ScrollEvent = undefined;
 		});
 
 
-		// scrollers
+		// content cloners
 		let copyguys = document.querySelectorAll('[data-copyme]');
 		copyguys.forEach(el => {
 			el.dataset['picker'] = 'copyguy';
@@ -189,6 +194,27 @@ let latest_ScrollEvent = undefined;
 
 			el.innerHTML = dt;
 		});
+	}
+
+	function uis_afterfx() {
+		// after effects once the uis are all initiated
+
+		// make the sidenav links close the menu modal
+		let sdnavs = document.querySelectorAll('.sidebar');
+
+		if(sdnavs.length > 0){
+			sdnavs.forEach((sdnav,id) => {
+				let lnks = sdnav.querySelectorAll('a');
+				let mlk = "sdlink_" + id;
+				sdnav.dataset.mlk = mlk;
+
+				lnks.forEach((el,id) => {
+					el.addEventListener('click',() => {
+						toggleShowB(`[data-mlk=${mlk}]`,'flex','none');
+					})
+				})
+			});
+		}
 	}
 
 	// handles scroller functionality
@@ -279,12 +305,20 @@ let latest_ScrollEvent = undefined;
 	window.addEventListener('load',() => {
 		createextras();
 		uis_init();
+		setTimeout(() => {
+			uis_afterfx();
+		},afterfx_delay);
+
+		pageloaded = true;
 	})
 
 	window.addEventListener('scroll',event => {
 		// for inspection purposes
 		latest_ScrollEvent = event;
-		handle_scrollers(event);
+
+		if(pageloaded){
+			handle_scrollers(event);
+		}
 	})
 
 	function refreshUI(){
@@ -294,9 +328,9 @@ let latest_ScrollEvent = undefined;
 
 // reusables (add to toappend.js later)
 	function getval(tx,n) {
+		// basically tx% of n
 		let res = 0;
 		let amt = Number(tx.substr(0,tx.length - 1));
-
 
 		// basically tx% of n
 		if(tx.includes('%')){
